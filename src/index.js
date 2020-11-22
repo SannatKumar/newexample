@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+/**
 const Hello = ({name, age}) => {
   const bornYear = () => new Date().getFullYear() - age
   return(
@@ -24,12 +24,28 @@ const App = () =>{
 
     </div>
   )
+}*/
+
+const App = (props) => {
+  const {counter} = props
+  return(
+    <>
+    {counter}
+    </>
+  )
 }
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+let counter = 1
+const refresh = () => {
+  ReactDOM.render(<App counter = {counter} />, document.getElementById('root'));
+}
+
+setInterval(() =>{
+refresh()
+counter+= 1
+}, 1000)
+refresh()
+counter+=1
+refresh()
 
 
