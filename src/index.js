@@ -1,5 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
+
+//Using React State Hooks
+
+const App = () => {
+  const [counter, setCounter] = useState(0)
+  
+  setTimeout(() => setCounter(counter+1),
+    1000
+    )
+    return(
+      <div>{counter}</div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
 /**
 const Hello = ({name, age}) => {
   const bornYear = () => new Date().getFullYear() - age
@@ -25,7 +41,7 @@ const App = () =>{
     </div>
   )
 }*/
-
+/* //Displaying the changing data using set Interval
 const App = (props) => {
   const {counter} = props
   return(
@@ -47,5 +63,11 @@ counter+= 1
 refresh()
 counter+=1
 refresh()
+
+*/
+
+
+
+
 
 
