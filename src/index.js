@@ -1,6 +1,34 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
+// More Complex state handling
+
+const App = () => {
+  const [left, setleft] = useState(0)
+  const [right, setRight] = useState(0)
+
+  return(
+    <div>
+      {left}
+      <button onClick = {() => setleft(left + 1)}>
+        Increase Left
+      </button> 
+      <br />
+      {right}
+      <button onClick = {() => setRight(right + 1)}>
+        Increase Right
+      </button>
+      <button onClick = {() => setleft(0)}> OK Left</button>
+      <button onClick = {() => setRight(0)}> OK Right</button>
+    </div>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+
+
+/*
 //Using React State Hooks
 
 const App = () => {
@@ -15,6 +43,8 @@ const App = () => {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
+
+*/
 
 /**
 const Hello = ({name, age}) => {
