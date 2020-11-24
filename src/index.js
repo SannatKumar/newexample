@@ -1,6 +1,46 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
+//Using the object style for left right values
+
+//main app function and variable initiation
+
+const App = () => {
+  const[clicks, setNewClicks] = useState({
+    left: 0,
+    right: 0
+  })
+
+  //For the left click
+
+  const handleLeftClick = () =>{
+    const newClick = {
+      left: clicks.left + 1,
+      right: clicks.right
+    }
+    setNewClicks(newClick)
+  }
+
+  //For the Right click
+
+  const handleRightClick = () =>{
+    const newClick = {
+      left: clicks.left,
+      right: clicks.right + 1
+    }
+    setNewClicks(newClick)
+  }
+  return(
+    <div>
+      {clicks.left}
+      <button onClick={handleLeftClick}>Left</button>
+      {clicks.right}
+      <button onClick={handleRightClick}>Right</button>
+    </div>
+  )
+}
+ReactDOM.render(<App />, document.getElementById('root'))
+/*
 // More Complex state handling
 
 const App = () => {
@@ -26,7 +66,7 @@ const App = () => {
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
-
+*/
 
 /*
 //Using React State Hooks
