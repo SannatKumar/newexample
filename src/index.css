@@ -1,7 +1,7 @@
 .scoreboard{
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  border: 5px solid black;
+  border: 5px dotted black;
   border-radius: 25%;
   
 }
