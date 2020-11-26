@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
+import "./index.css";
 
 //Using the object style for left right values
 
@@ -33,11 +34,12 @@ const App = () => {
     setNewClicks(newClick)
   }
   return(
-    <div>
+    <div className = "scoreboard">
+      <p className = "title">ScoreBoard</p>
       {clicks.left}
-      <button onClick={handleLeftClick}>Left</button>
+      <button id = "left" onClick={handleLeftClick}>Left </button><br />
       {clicks.right}
-      <button onClick={handleRightClick}>Right</button>
+      <button id = "right" onClick={handleRightClick}>Right</button>
     </div>
   )
 }
