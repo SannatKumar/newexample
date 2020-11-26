@@ -15,8 +15,9 @@ const App = () => {
 
   const handleLeftClick = () =>{
     const newClick = {
-      left: clicks.left + 1,
-      right: clicks.right
+      //using Object Spread...
+      ...clicks,
+      left: clicks.left + 1
     }
     setNewClicks(newClick)
   }
@@ -25,7 +26,8 @@ const App = () => {
 
   const handleRightClick = () =>{
     const newClick = {
-      left: clicks.left,
+      //using object spread...
+      ...clicks,
       right: clicks.right + 1
     }
     setNewClicks(newClick)
