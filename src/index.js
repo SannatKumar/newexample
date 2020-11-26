@@ -9,7 +9,8 @@ import "./index.css";
 const App = () => {
   const[clicks, setNewClicks] = useState({
     left: 0,
-    right: 0
+    right: 0,
+    total: 0
   })
 
   //For the left click
@@ -18,7 +19,8 @@ const App = () => {
     const newClick = {
       //using Object Spread...
       ...clicks,
-      left: clicks.left + 1
+      left: clicks.left + 1,
+      total: clicks.total + 1
     }
     setNewClicks(newClick)
   }
@@ -29,7 +31,8 @@ const App = () => {
     const newClick = {
       //using object spread...
       ...clicks,
-      right: clicks.right + 1
+      right: clicks.right + 1,
+      total: clicks.total + 1
     }
     setNewClicks(newClick)
   }
@@ -37,9 +40,10 @@ const App = () => {
     <div className = "scoreboard">
       <p className = "title">ScoreBoard</p>
       {clicks.left}
-      <button id = "left" onClick={handleLeftClick}>Left </button><br />
+      <button id = "left" onClick={handleLeftClick}>Left </button>
       {clicks.right}
-      <button id = "right" onClick={handleRightClick}>Right</button>
+      <button id = "right" onClick={handleRightClick}>Right</button><br /><br />
+      Total: {clicks.total}
     </div>
   )
 }
